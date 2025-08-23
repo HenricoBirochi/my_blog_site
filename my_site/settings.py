@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1##r*3!*@*(c5ht111v_qr%4gcb5&zn2avq7#)w_h(l$d&o^3)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -117,16 +117,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles' # Essa config serve para falar qual o diretório onde TODOS os
+STATIC_URL = 'static/'                 # arquivos estáticos permaneceram
 
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
+MEDIA_ROOT = BASE_DIR / 'uploads'
+MEDIA_URL = '/files/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-MEDIA_ROOT = BASE_DIR / 'uploads'
-MEDIA_URL = '/files/'
