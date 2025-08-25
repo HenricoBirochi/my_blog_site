@@ -1,15 +1,14 @@
-# My Personal Blog
+# 📖 My Personal Blog
 
 Este é um projeto de um blog pessoal onde você pode criar, editar e excluir posts, salvar posts para ler mais tarde e comentar em posts de outros usuários.
 
 ## Funcionalidades
 
-* **Posts**: Crie, edite e exclua seus próprios posts.
-* **Comentários**: Interaja com outros usuários comentando nos posts.
-* **Posts Salvos**: Salve posts interessantes para ler depois.
-* **Autenticação**: Gerencie sua conta de usuário com segurança.
-
-## Tecnologias
+* ✍️ **Posts**: Crie, edite e exclua seus próprios posts.
+* 💬 **Comentários**: Interaja com outros usuários comentando nos posts.
+* 💾 **Posts Salvos**: Salve posts interessantes para ler depois.
+  
+## 🚀 Tecnologias
 
 * **Django**: Framework web usado para o backend.
 * **PostgreSQL**: Banco de dados relacional para armazenar os dados.
@@ -17,7 +16,7 @@ Este é um projeto de um blog pessoal onde você pode criar, editar e excluir po
 
 ---
 
-## Como começar
+## ⚙️ Como começar
 
 Siga as instruções abaixo para configurar e rodar o projeto localmente.
 
@@ -25,7 +24,7 @@ Siga as instruções abaixo para configurar e rodar o projeto localmente.
 
 Certifique-se de que você tem o **Python** e o **Docker** instalados em sua máquina.
 
-### Configuração do Projeto
+### 🛠️ Configuração do Projeto
 
 1.  **Clone o repositório:**
     ```bash
@@ -45,7 +44,7 @@ Certifique-se de que você tem o **Python** e o **Docker** instalados em sua má
     docker-compose up -d --build
     ```
 
-    Isso vai iniciar o servidor web e o banco de dados em contêineres separados. O banco de dados estará pronto para uso.
+    Isso vai iniciar o servidor do banco de dados em um contêiner. O banco de dados estará pronto para uso.
 
     **Opção 2: Usando um PostgreSQL local**
 
