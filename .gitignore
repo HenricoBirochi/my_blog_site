@@ -20,3 +20,6 @@ postgres_data/
 
 # AWS Configuration
 .ebextensions/
+
+# Secret Key
+secret_key.txt
