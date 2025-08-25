@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from os import getenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-1##r*3!*@*(c5ht111v_qr%4gcb5&zn2avq7#)w_h(l$d&o^3)'
+SECRET_KEY = 'django-insecure-1##r*3!*@*(c5ht111v_qr%4gcb5&zn2avq7#)w_h(l$d&o^3)' # Você nunca deve mostrar essa chave para ninguém
+# Ela deve permanecer escondida, por isso muitos a colocam como variável de ambiente e não uma chave padrão. Nunca poste ela no github
+# Mas eu vou deixar padrão mesmo
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = []
+DEBUG = getenv('IS_DEVELOPMENT', True) # Se ele não receber nenhum valor, o seu valor por padrão será True
+                                       # Fazendo com que o projeto por padrão, venha em ambiente de desenvolvimento
+ALLOWED_HOSTS = [
+    getenv('APP_HOST', '127.0.0.1')
+]
 
 
 # Application definition
@@ -77,8 +82,12 @@ WSGI_APPLICATION = 'my_site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'web_blog_db',
+        'USER': 'postgres',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
+        'PORT': '5431',
     }
 }
 
