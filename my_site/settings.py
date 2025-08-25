@@ -21,9 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-1##r*3!*@*(c5ht111v_qr%4gcb5&zn2avq7#)w_h(l$d&o^3)' # Você nunca deve mostrar essa chave para ninguém
+SECRET_KEY = getenv('SECRET_KEY', 'random_secret_key') # Você nunca deve mostrar essa chave para ninguém
 # Ela deve permanecer escondida, por isso muitos a colocam como variável de ambiente e não uma chave padrão. Nunca poste ela no github
-# Mas eu vou deixar padrão mesmo
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = getenv('IS_DEVELOPMENT', True) # Se ele não receber nenhum valor, o seu valor por padrão será True
